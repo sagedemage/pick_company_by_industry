@@ -1,10 +1,10 @@
-# random_number_generator_cli
+# pick_company_by_industry
 
-A CLI program to generate a random number.
+A CLI program to pick a company by industry
 
-![Random Number Generator Program](./screenshots/random_number_generator_program.PNG)
+![Pick Company by Industry Program](./screenshots/pick_company_by_industry_program.PNG)
 
-Run the random number generator program:
+Run the pick company by industry program:
 ```
-.\rand_num_gen.ps1 -min 1 -max 10
+.\rand_num_gen.ps1 -industry Defense
 ```
