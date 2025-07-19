@@ -1,0 +1,28 @@
+{
+    "Industries": {
+        "Defense": {
+            "max_num": 10
+        },
+        "Healthcare": {
+            "max_num": 9
+        },
+        "Finance": {
+            "max_num": 6
+        },
+        "Hospitals": {
+            "max_num": 26
+        },
+        "Education": {
+            "max_num": 22
+        },
+        "Telecommunications": {
+            "max_num": 5
+        },
+        "IT_Consulting": {
+            "max_num": 16
+        },
+        "Manufacturing": {
+            "max_num": 11
+        }
+    }
+}
