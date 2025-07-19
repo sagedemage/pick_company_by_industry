@@ -7,7 +7,7 @@ $config = Get-Content -Path ".\config.json" | ConvertFrom-Json
 $industry_names = $config.Industries | Get-Member -MemberType Properties | Select-Object Name
 
 if ($industry -eq "") {
-    Write-Output "Specify the indsutry value like this:"
+    Write-Output "Specify the industry value like this:"
     Write-Output ".\pick_company_by_industry.ps1 -industry Defense"
     exit
 }
