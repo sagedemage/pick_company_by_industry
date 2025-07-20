@@ -4,8 +4,6 @@ param (
 
 $config = Get-Content -Path ".\config.json" | ConvertFrom-Json
 
-$industry_names = $config.Industries | Get-Member -MemberType Properties | Select-Object Name
-
 if ($industry -eq "") {
     Write-Output "Specify the industry value like this:"
     Write-Output ".\pick_company_by_industry.ps1 -industry Defense"
@@ -15,12 +13,18 @@ if ($industry -eq "") {
 $min = 1
 $max = 0
 
-for ($i = 0; $i -lt $industry_names.length; $i++) {
-    $name = $industry_names.Name[$i]
-    if ($name -eq $industry) {
-        $max = $config.Industries.$name.max_num
-        break
-    }
+$industry_exist = $null -ne $config.Industries.$industry
+
+if ($industry_exist -eq $false) {
+    Write-Output "Industry, `"$industry`", does not exist!"
+    exit
+}
+
+$max = $config.Industries.$industry.max_num
+
+if ($max -eq 0) {
+    Write-Output "Maximum value can't be zero!"
+    exit
 }
 
 if ($min -eq $max) {
